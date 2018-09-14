@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% set serviceName %}
+Financial sanctions checker
+{% endset%}
+{% block pageTitle %}
+  Financial sanctions checker
+{% endblock %}
+
+{% block content %}
+  <h1 class="govuk-heading-xl">
+    Financial sanctions checker</h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="search-results" method="get" class="form">
+
+        {{ govukInput({
+        label: {
+          text: "Corporate name"
+        },
+        id: "corp-name",
+        name: "corp-name",
+        classes: ""
+      }) }}
+
+        {{ govukInput({
+        label: {
+        text: "Forename(s)"
+          },
+          id: "name",
+          name: "name",
+          hint: {
+           text: "For example, 'Abdallah' or 'Abdallah Azzam Majid'"
+         },
+          classes: "govuk-!-width-two-thirds"
+        }) }}
+
+        {{ govukInput({
+        label: {
+        text: "Surname"
+          },
+          id: "name",
+          name: "name",
+          hint: {
+           text: "For example, 'Kakwavu'"
+         },
+          classes: "govuk-!-width-one-half"
+        }) }}
+
+        {{ govukInput({
+        label: {
+          text: "Group ID"
+        },
+        id: "group-id",
+        name: "group-id",
+        type: "number",
+        classes: "govuk-!-width-one-quarter"
+      }) }}
+
+        {{ govukDateInput({
+        id: "dob",
+        namePrefix: "dob",
+        fieldset: {
+          legend: {
+            text: "Date of birth",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend"
+          }
+        }
+      }) }}
+
+        {{ govukButton({
+          text: "Search"
+        }) }}
+
+      </form>
+    </div>
+    <!--govuk-grid-column-two-thirds-->
+  </div>
+  <!--govuk-grid-row-->
+
+{% endblock %}

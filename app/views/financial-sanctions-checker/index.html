@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% set serviceName %}
+Financial sanctions checker
+{% endset%}
+{% block pageTitle %}
+  Financial sanctions checker
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Financial sanctions checker</h1>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/financial-sanctions-checker/search">Search</a>
+        </li>
+        <li>
+          <a href="/financial-sanctions-checker/search-results">Search results (basic presentation)</a>
+        </li>
+        <li>
+          <a href="/financial-sanctions-checker/search-results-extra">Search results (alternative presentation)</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}

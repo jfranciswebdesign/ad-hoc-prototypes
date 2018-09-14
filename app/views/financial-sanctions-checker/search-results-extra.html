@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+{% set serviceName %}
+Financial sanctions checker
+{% endset%}
+{% block pageTitle %}
+  Search results
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "search"
+}) }}
+
+  <span class="govuk-caption-l">Search results</span>
+  {{ govukButton({
+    text: "Save as PDF",
+    classes: "save-pdf"
+  }) }}
+  <h1 class="govuk-heading-l govuk-!-padding-bottom-3">
+    Last updated 12 September 2018</h1>
+
+  <div class="govuk-grid-row financial-sanctions-search-results-extra" id="financial-sanctions-search-results">
+    <div class="govuk-grid-column-full">
+
+      <ul class="govuk-list">
+        <li class="SpacedOut">
+          <span class="govuk-heading-s">Regime: Iraq</span>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <em>Surname:</em>
+              AL-TIKRITI<br/>
+              <em>Forename 1:</em>
+              ALI<br/>
+              <em>Forename 2:</em>
+              <span class="highlight">BARZAN</span><br/>
+              <em>Forename 3:</em>
+              IBRAHIM<br/>
+              <em>Forename 4:</em>
+              HASAN<br>
+              <em>Forename 5:</em>
+              n/a
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <span class="dob">
+                <em>Date of birth:</em>
+                18/04/1981</span>
+              <br>
+                <em>Nationality:</em>
+                Iraqi</br>
+              <em>Address:</em>
+              Geneva, Switzerland<br/>
+              <span class="other-information">
+                <em>Other information:</em>
+                Child of
+                <span class="highlight">BARZAN</span>Ibrahim Hasan Al-Tikriti</span>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <em>Listed on:</em>
+              22/04/2004<br/>
+              <em>Last updated:</em>
+              22/04/2004<br/>
+              <span class="group-id">
+                <em>Group ID:</em>
+                8248</span></div>
+          </div>
+        </li>
+
+        <li class="SpacedOut">
+          <span class="govuk-heading-s">Regime: Iran</span>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <em>Surname:</em>
+              AL-TIKRITI<br/>
+              <em>Forename 1:</em>
+              <span class="highlight">BARZAN</span><br/>
+              <em>Forename 2:</em>
+              ABD AL-GHAFUR<br/>
+              <em>Forename 3:</em>
+              SULAIMAN<br/>
+              <em>Forename 4:</em>
+              MAJID<br>
+              <em>Forename 5:</em>
+              n/a<br/>
+              <span class="aka">
+                <em>Also know as:</em>
+                ABD AL-GHAFUR</span>
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <span class="dob">
+                <em>Date of birth:</em>
+                --/--/1960</span>
+              <br>
+              <span class="pob">
+                <em>Place of birth:</em>
+                Salah al-Din, Iraq</span>
+              <br>
+
+                <em>Nationality:</em>
+                Iraqi</br>
+
+              <span class="other-information">
+                <em>Other information:</em>
+                Commander. Special Republican Guard
+              </div>
+              <div class="govuk-grid-column-one-third">
+                <em>Listed on:</em>
+                02/07/2003<br/>
+                <em>Last updated:</em>
+                02/07/2003<br/>
+                <span class="group-id">
+                  <em>Group ID:</em>
+                  7620</span></div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+      <!--govuk-grid-column-full-->
+    </div>
+    <!--govuk-grid-row-->
+
+    <p>
+      <a href="search-results" class="alt-link">Alternative</a>
+    </p>
+
+  {% endblock %}

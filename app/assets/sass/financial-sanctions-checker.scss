@@ -1,0 +1,42 @@
+//Styles for  Financial sanctions checker
+
+#financial-sanctions-search-results {
+  li.SpacedOut {
+    margin-bottom: 2em;
+  }
+
+  span.highlight {
+    background-color: $govuk-focus-colour;
+    font-weight: 700;
+  }
+
+  &.financial-sanctions-search-results-extra {
+    li.SpacedOut {
+      background-color: govuk-colour("grey-4");
+      padding: 1em;
+
+      .aka,
+      .group-id,
+      .other-information {
+        display: block;
+        margin-top: 0.5em;
+      }
+
+      .govuk-heading-s {
+        margin-bottom: 0.3em;
+        font-weight: normal;
+      }
+    }
+  }
+}
+
+.save-pdf {
+  float: right;
+}
+
+a.alt-link:link,
+a.alt-link:visited {
+  float: right;
+  color: govuk-colour("grey-3");
+  font-size: 0.7em;
+}
