@@ -7,7 +7,9 @@
   }) }}
 {% endblock %}
 {% block pageTitle %}
-  Is {name} a person with significant control?
+  Is
+  {{ data['person-name-for-testing'] }}
+  a person with significant control?
 {% endblock %}
 
 {% block content %}
@@ -18,10 +20,12 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="javascript:void(0)" method="get" class="form">
+      <form action="/scrs/how-much-profit" method="get" class="form">
 
         <h1 class="govuk-heading-l">
-          Is {name} a person with significant control?</h1>
+          Is
+          {{ data['person-name-for-testing'] }}
+          a person with significant control?</h1>
 
         <details class="govuk-details">
           <summary class="govuk-details__summary">

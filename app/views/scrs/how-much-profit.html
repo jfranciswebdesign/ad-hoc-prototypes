@@ -7,7 +7,9 @@
   }) }}
 {% endblock %}
 {% block pageTitle %}
-  How much of the company's profits will {guarantor's name} receive?
+  How much of the company's profits will
+  {{ data['person-name-for-testing'] }}
+  receive?
 {% endblock %}
 {% block content %}
   {{ govukBackLink({
@@ -17,41 +19,54 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="javascript:void(0)" method="get" class="form">
+      <form action="/scrs/percentage-voting-rights" method="get" class="form">
 
-        {{ govukRadios({
-    idPrefix: "how-much-profits",
-    name: "how-much-profits",
-    fieldset: {
-      legend: {
-        text: "How much of the company's profits will {guarantor's name} receive?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--l"
-      }
-    },
-    items: [
-      {
-        value: "seventy-five",
-        text: "75% or more of profits",
-        checked: checked('how-much-profits','seventy-five')
-      },
-      {
-        value: "fifty",
-        text: "More than 50%, but not more than 75% of profits",
-        checked: checked('how-much-profits','fifty')
-      },
-      {
-        value: "twenty-five",
-        text: "More than 25%, but not more than 50% of profits",
-        checked: checked('how-much-profits','twenty-five')
-      },
-      {
-        value: "none",
-        text: "None of the above",
-        checked: checked('how-much-profits','none')
-      }
-    ]
-  }) }}
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                How much of the company's profits will
+                {{ data['person-name-for-testing'] }}
+                receive?
+              </h1>
+            </legend>
+
+            <div class="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-much-profits-1" name="how-much-profits" type="radio" value="seventy-five">
+                <label class="govuk-label govuk-radios__label" for="how-much-profits-1">
+                  75% or more of profits
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-much-profits-2" name="how-much-profits" type="radio" value="fifty">
+                <label class="govuk-label govuk-radios__label" for="how-much-profits-2">
+                  More than 50%, but not more than 75% of profits
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-much-profits-3" name="how-much-profits" type="radio" value="twenty-five">
+                <label class="govuk-label govuk-radios__label" for="how-much-profits-3">
+                  More than 25%, but not more than 50% of profits
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="how-much-profits-4" name="how-much-profits" type="radio" value="none">
+                <label class="govuk-label govuk-radios__label" for="how-much-profits-4">
+                  None of the above
+                </label>
+              </div>
+
+            </div>
+          </fieldset>
+
+        </div>
         {{ govukButton({
           text: "Save and continue"
           }) }}

@@ -7,7 +7,8 @@
   }) }}
 {% endblock %}
 {% block pageTitle %}
-  What percentage of voting rights does {name} own?
+  What percentage of voting rights does
+  {{ data['person-name-for-testing'] }}own?
 {% endblock %}
 
 {% block content %}
@@ -18,41 +19,53 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="javascript:void(0)" method="get" class="form">
+      <form action="/scrs/right-remove-appoint" method="get" class="form">
 
-        {{ govukRadios({
-    idPrefix: "percentage-voting-rights",
-    name: "percentage-voting-rights",
-    fieldset: {
-      legend: {
-        text: "What percentage of voting rights does {name} own?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--l"
-      }
-    },
-    items: [
-      {
-        value: "seventy-five",
-        text: "75% or more of voting rights",
-        checked: checked('percentage-voting-rights','seventy-five')
-      },
-      {
-        value: "fifty",
-        text: "More than 50%, but not more than 75% of voting rights",
-        checked: checked('percentage-voting-rights','fifty')
-      },
-      {
-        value: "twenty-five",
-        text: "More than 25%, but not more than 50% of voting rights",
-        checked: checked('percentage-voting-rights','twenty-five')
-      },
-      {
-        value: "none",
-        text: "None of the above",
-        checked: checked('percentage-voting-rights','none')
-      }
-    ]
-  }) }}
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What percentage of voting rights does
+                {{ data['person-name-for-testing'] }}
+                own?
+              </h1>
+            </legend>
+            <div class="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="percentage-voting-rights-1" name="percentage-voting-rights" type="radio" value="seventy-five">
+                <label class="govuk-label govuk-radios__label" for="percentage-voting-rights-1">
+                  75% or more of voting rights
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="percentage-voting-rights-2" name="percentage-voting-rights" type="radio" value="fifty">
+                <label class="govuk-label govuk-radios__label" for="percentage-voting-rights-2">
+                  More than 50%, but not more than 75% of voting rights
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="percentage-voting-rights-3" name="percentage-voting-rights" type="radio" value="twenty-five">
+                <label class="govuk-label govuk-radios__label" for="percentage-voting-rights-3">
+                  More than 25%, but not more than 50% of voting rights
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="percentage-voting-rights-4" name="percentage-voting-rights" type="radio" value="none">
+                <label class="govuk-label govuk-radios__label" for="percentage-voting-rights-4">
+                  None of the above
+                </label>
+              </div>
+
+            </div>
+          </fieldset>
+
+        </div>
         {{ govukButton({
           text: "Save and continue"
           }) }}

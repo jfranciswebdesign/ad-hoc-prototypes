@@ -7,7 +7,9 @@
   }) }}
 {% endblock %}
 {% block pageTitle %}
-  Will {guarantor's name} be distributed a share of the company's profit?
+  Will
+  {{ data['person-name-for-testing'] }}
+  be distributed a share of the company's profit?
 {% endblock %}
 
 {% block content %}
@@ -17,9 +19,11 @@
   }) }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="javascript:void(0)" method="get" class="form">
+      <form action="/scrs/is-a-psc" method="get" class="form">
 
-        <h1 class="govuk-heading-l">Will {guarantor's name} be distributed a share of the company's profit?</h1>
+        <h1 class="govuk-heading-l">Will
+          {{ data['person-name-for-testing'] }}
+          be distributed a share of the company's profit?</h1>
 
         <p>Guarantors (also known as members) don't usually take a profit from the company - instead the money is kept within the company or used for other purposes.</p>
 

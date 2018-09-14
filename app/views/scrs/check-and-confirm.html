@@ -7,7 +7,8 @@
   }) }}
 {% endblock %}
 {% block pageTitle %}
-  Check and confirm details of the persons in control of {COMPANY NAME}
+  Check and confirm details of the persons in control of
+  {{ data['company-name-for-testing'] }}
 {% endblock %}
 
 {% block content %}
@@ -21,7 +22,8 @@
       <form action="javascript:void(0)" method="get" class="form">
 
         <h1 class="govuk-heading-l">
-          Check and confirm details of the persons in control of {COMPANY NAME}
+          Check and confirm details of the persons in control of
+          {{ data['company-name-for-testing'] }}
         </h1>
 
         {{ govukInsetText({
@@ -34,10 +36,11 @@
 
         <!-- only add a heading for a list if there is more than one list -->
         <h2 class="govuk-heading-m">
-          {Name}
+          {{ data['person-name-for-testing'] }}
         </h2>
         <p>
-          <a href="javascript:void(0)" class="govuk-link">Remove Person with Significant Control {Name}</a>
+          <a href="javascript:void(0)" class="govuk-link">Remove Person with Significant Control
+            {{ data['person-name-for-testing'] }}</a>
         </p>
 
         <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
@@ -50,7 +53,7 @@
               Name
             </dt>
             <dd class="app-check-your-answers__answer">
-              {Name}
+              {{ data['person-name-for-testing'] }}
             </dd>
             <dd class="app-check-your-answers__change">
               <a href="javascript:void(0)">
@@ -107,14 +110,16 @@
 
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-              What is the correspondence address for Stephen Wigley?
+              What is the correspondence address for
+              {{ data['person-name-for-testing'] }}?
             </dt>
             <dd class="app-check-your-answers__answer">The correspondence address is the same as the company's registered office address
             </dd>
             <dd class="app-check-your-answers__change">
               <a href="javascript:void(0)">
                 Change<span class="govuk-visually-hidden">
-                  What is the correspondence address for Stephen Wigley?
+                  What is the correspondence address for
+                  {{ data['person-name-for-testing'] }}?
                 </span>
               </a>
             </dd>
@@ -122,7 +127,8 @@
 
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-              What is the home address for {name}?
+              What is the home address for
+              {{ data['person-name-for-testing'] }}?
             </dt>
             <dd class="app-check-your-answers__answer">14 Crown Way<br/>
               Cardiff<br/>
@@ -132,21 +138,26 @@
             <dd class="app-check-your-answers__change">
               <a href="javascript:void(0)">
                 Change<span class="govuk-visually-hidden">
-                  What is the home address for {name}?</span>
+                  What is the home address for
+                  {{ data['person-name-for-testing'] }}?</span>
               </a>
             </dd>
           </div>
 
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-              Will {name} be distributed a share of the company's profits?
+              Will
+              {{ data['person-name-for-testing'] }}
+              be distributed a share of the company's profits?
             </dt>
             <dd class="app-check-your-answers__answer">No
             </dd>
             <dd class="app-check-your-answers__change">
               <a href="javascript:void(0)">
                 Change<span class="govuk-visually-hidden">
-                  Will {name} be distributed a share of the company's profits?
+                  Will
+                  {{ data['person-name-for-testing'] }}
+                  be distributed a share of the company's profits?
                 </span>
               </a>
             </dd>
@@ -154,14 +165,18 @@
 
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-              What percentage of voting rights does {name} own?
+              What percentage of voting rights does
+              {{ data['person-name-for-testing'] }}
+              own?
             </dt>
             <dd class="app-check-your-answers__answer">The person holds, directly or indirectly, more than 75% of the voting rights in the company.
             </dd>
             <dd class="app-check-your-answers__change">
               <a href="javascript:void(0)">
                 Change<span class="govuk-visually-hidden">
-                  What percentage of voting rights does {name} own?
+                  What percentage of voting rights does
+                  {{ data['person-name-for-testing'] }}
+                  own?
                 </span>
               </a>
             </dd>
@@ -169,14 +184,18 @@
 
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
-              As an individual, does {name} have the right to appoint or remove directors?
+              As an individual, does
+              {{ data['person-name-for-testing'] }}
+              have the right to appoint or remove directors?
             </dt>
             <dd class="app-check-your-answers__answer">The person holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company.
             </dd>
             <dd class="app-check-your-answers__change">
               <a href="javascript:void(0)">
                 Change<span class="govuk-visually-hidden">
-                  As an individual, does {name} have the right to appoint or remove directors?
+                  As an individual, does
+                  {{ data['person-name-for-testing'] }}
+                  have the right to appoint or remove directors?
                 </span>
               </a>
             </dd>
@@ -188,24 +207,24 @@
           <a href="javascript:void(0)" class="govuk-link">Add another person in control of the company</a>
         </p>
 
-        {{ govukCheckboxes({
-          idPrefix: "waste",
-          name: "waste",
-          fieldset: {
-            legend: {
-              text: "I confirm that the persons named here are in control of {COMPANY NAME}. They understand that their information will be listed in the public record.",
-              isPageHeading: false,
-              classes: "govuk-visually-hidden"
-            }
-          },
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="confirm">
+            <legend class="govuk-visually-hidden">
+              I confirm that the persons named here are in control of
+              {{ data['company-name-for-testing'] }}. They understand that their information will be listed in the public record.
+            </legend>
 
-          items: [
-            {
-              value: "confirm",
-              text: "I confirm that the persons named here are in control of {COMPANY NAME}. They understand that their information will be listed in the public record."
-            }
-          ]
-        }) }}
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste-1" name="confirm" type="checkbox" value="confirm">
+                <label class="govuk-label govuk-checkboxes__label" for="confirm">
+                  I confkkkirm that the persons named here are in control of
+                  {{ data['company-name-for-testing'] }}. They understand that their information will be listed in the public record.
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
 
         {{ govukDetails({
             summaryText: "What legal statement will appear on this company application?",

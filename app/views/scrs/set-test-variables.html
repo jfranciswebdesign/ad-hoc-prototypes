@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Set test variables
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukInsetText({
+        text: "User researchers should enter these details BEFORE the test starts (this screen should not be seen by the user)"
+      }) }}
+
+      <form action="/scrs/psc-halt-page" method="post">
+
+        {{ govukInput({
+        label: {
+        text: "What is the company name?",
+        classes: "govuk-label--m govuk-!-margin-bottom-0"
+          },
+          hint: {
+            text: "For example, 'WIGS TEST LIMITED'"
+          },
+          classes: "govuk-input all-caps",
+            id: "company-name-for-testing",
+            name: "company-name-for-testing"
+          }) }}
+
+        {{ govukInput({
+          label: {
+          text: "What is the person's name?",
+          classes: "govuk-label--m govuk-!-margin-bottom-0"
+            },
+            hint: {
+              text: "For example, 'Steve Wigley'"
+            },
+              classes: "govuk-input",
+              id: "person-name-for-testing",
+              name: "person-name-for-testing"
+            }) }}
+
+        {{ govukButton({
+        text: "Save and continue"
+      }) }}
+      </form>
+      <p class="govuk-hint">
+        Use the 'Clear data' link (in the footer) after each test session.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
