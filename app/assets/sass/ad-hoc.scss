@@ -1,0 +1,21 @@
+//Styles for SCRS
+
+.homepage {
+  a:link,
+  a:visited {
+    text-align: center;
+    background-color: #005ea5;
+    color: #ffffff;
+    margin-right: 1em;
+    height: 7em;
+    padding: 0.7em;
+    text-decoration: none;
+    border: 10px solid #005ea5;
+
+    &:focus,
+    &:hover {
+      background-color: #2b8cc4;
+      border: 10px solid #ffbf47;
+    }
+  }
+}

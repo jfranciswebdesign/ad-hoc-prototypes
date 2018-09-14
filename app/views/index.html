@@ -7,19 +7,14 @@
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds homepage">
+
       <h1 class="govuk-heading-xl">
         Ad-hoc prototype work</h1>{{releaseVersion | log }}
 
-      <h2 class="govuk-heading-m">Prototypes</h2>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/financial-sanctions-checker/index">Financial sanctions checker</a>
-        </li>
-        <li>
-          <a href="/scrs/index">Streamlined company registration service</a>
-        </li>
-      </ul>
+      <a href="/financial-sanctions-checker/index" class="govuk-grid-column-one-third govuk-caption-l">Financial sanctions checker</a>
+      <a href="/scrs/index" class="govuk-grid-column-one-third govuk-caption-l">Streamlined company registration service</a>
+
     </div>
   </div>
 
