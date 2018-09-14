@@ -21,7 +21,7 @@ module.exports = {
 
 	// Insert values here
 
-	'company-name-for-testing': 'A TEST COMPANY LIMITED',
-	'person-name-for-testing': 'JOE BLOGGS'
+	"company-name-for-testing": "A TEST COMPANY LIMITED",
+	"person-name-for-testing": "JOE BLOGGS"
 
 }
