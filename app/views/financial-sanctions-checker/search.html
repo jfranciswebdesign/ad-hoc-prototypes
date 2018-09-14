@@ -1,7 +1,11 @@
 {% extends "layout.html" %}
-{% set serviceName %}
-Financial sanctions checker
-{% endset%}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/financial-sanctions-checker/index",
+    serviceName: "Financial sanctions checker",
+    serviceUrl: "/financial-sanctions-checker/index"
+  }) }}
+{% endblock %}
 {% block pageTitle %}
   Financial sanctions checker
 {% endblock %}

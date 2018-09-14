@@ -1,7 +1,12 @@
 {% extends "layout.html" %}
-{% set serviceName %}
-Set up a limited company and register for Corporation Tax
-{% endset%}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+
 {% block pageTitle %}
   Streamlined company registration service
 {% endblock %}
