@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Does {name} have the right to appoint or remove the majority of company directors?
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/" method="get" class="form">
+
+        <h1 class="govuk-heading-l">Does {name} have the right to appoint or remove the majority of company directors?</h1>
+
+        <p>This is the right to be involved in making the decision to appoint or remove directors, either with others or alone.</p>
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "right-remove-appoint",
+          name: "right-remove-appoint",
+          fieldset: {
+            legend: {
+              text: "Does {name} have the right to appoint or remove the majority of company directors?",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked('right-remove-appoint','yes')
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked('right-remove-appoint','no')
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+          }) }}
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

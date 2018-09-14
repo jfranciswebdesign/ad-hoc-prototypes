@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Will {guarantor's name} be distributed a share of the company's profit?
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/" method="get" class="form">
+
+        <h1 class="govuk-heading-l">Will {guarantor's name} be distributed a share of the company's profit?</h1>
+
+        <p>Guarantors (also known as members) don't usually take a profit from the company - instead the money is kept within the company or used for other purposes.</p>
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "distributed-share",
+          name: "distributed-share",
+          fieldset: {
+            legend: {
+              text: "Will {guarantor's name} be distributed a share of the company's profit?",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked('distributed-share','yes')
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked('distributed-share','no')
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+          }) }}
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

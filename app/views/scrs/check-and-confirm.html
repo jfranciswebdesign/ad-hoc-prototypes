@@ -1,0 +1,224 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Check and confirm details of the persons in control of {COMPANY NAME}
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/" method="get" class="form">
+
+        <h1 class="govuk-heading-l">
+          Check and confirm details of the persons in control of {COMPANY NAME}
+        </h1>
+
+        {{ govukInsetText({
+          text: "Details about persons in control of a company will appear on the public record except for the full date of birth and home address."
+        }) }}
+
+        <p>
+          Where the director, shareholder and Person with Significant Control are the same, we've reused information you entered previously.
+        </p>
+
+        <!-- only add a heading for a list if there is more than one list -->
+        <h2 class="govuk-heading-m">
+          {Name}
+        </h2>
+        <p>
+          <a href="javascript:void(0)" class="govuk-link">Remove Person with Significant Control {Name}</a>
+        </p>
+
+        <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+        <!-- * `app-check-your-answers--short` for short questions -->
+        <!-- * `app-check-your-answers__questions-long` for long questions -->
+        <!-- * none for single group of q&a -->
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Name
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {Name}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="#">
+                Change<span class="govuk-visually-hidden">
+                  name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Date of birth
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              5 January 1978
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="#">
+                Change<span class="govuk-visually-hidden">
+                  date of birth</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Country the person lives in
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              United Kingdom
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="#">
+                Change<span class="govuk-visually-hidden">
+                  Country the person lives in
+                </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Nationality
+            </dt>
+            <dd class="app-check-your-answers__answer">British
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="#">
+                Change<span class="govuk-visually-hidden">
+                  Nationality</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              What is the correspondence address for Stephen Wigley?
+            </dt>
+            <dd class="app-check-your-answers__answer">The correspondence address is the same as the company's registered office address
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="#">
+                Change<span class="govuk-visually-hidden">
+                  What is the correspondence address for Stephen Wigley?
+                </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              What is the home address for {name}?
+            </dt>
+            <dd class="app-check-your-answers__answer">14 Crown Way<br/>
+              Cardiff<br/>
+              Wales<br/>
+              CF14 3UZ
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="#">
+                Change<span class="govuk-visually-hidden">
+                  What is the home address for {name}?</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Will {name} be distributed a share of the company's profits?
+            </dt>
+            <dd class="app-check-your-answers__answer">No
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="#">
+                Change<span class="govuk-visually-hidden">
+                  Will {name} be distributed a share of the company's profits?
+                </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              What percentage of voting rights does {name} own?
+            </dt>
+            <dd class="app-check-your-answers__answer">The person holds, directly or indirectly, more than 75% of the voting rights in the company.
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="#">
+                Change<span class="govuk-visually-hidden">
+                  What percentage of voting rights does {name} own?
+                </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              As an individual, does {name} have the right to appoint or remove directors?
+            </dt>
+            <dd class="app-check-your-answers__answer">The person holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company.
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="#">
+                Change<span class="govuk-visually-hidden">
+                  As an individual, does {name} have the right to appoint or remove directors?
+                </span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+        <p>
+          <a href="javascript:void(0)" class="govuk-link">Add another person in control of the company</a>
+        </p>
+
+        {{ govukCheckboxes({
+          idPrefix: "waste",
+          name: "waste",
+          fieldset: {
+            legend: {
+              text: "I confirm that the persons named here are in control of {COMPANY NAME}. They understand that their information will be listed in the public record.",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+
+          items: [
+            {
+              value: "confirm",
+              text: "I confirm that the persons named here are in control of {COMPANY NAME}. They understand that their information will be listed in the public record."
+            }
+          ]
+        }) }}
+
+        {{ govukDetails({
+            summaryText: "What legal statement will appear on this company application?",
+            text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you can’t provide your nationality, you’ll have to send copies of identity documents through the post."
+          }) }}
+        {{ govukButton({
+            text: "Save and continue"
+            }) }}
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}ndblock %}

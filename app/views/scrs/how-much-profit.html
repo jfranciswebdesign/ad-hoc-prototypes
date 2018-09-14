@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  How much of the company's profits will {guarantor's name} receive?
+{% endblock %}
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/" method="get" class="form">
+
+        {{ govukRadios({
+    idPrefix: "how-much-profits",
+    name: "how-much-profits",
+    fieldset: {
+      legend: {
+        text: "How much of the company's profits will {guarantor's name} receive?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--l"
+      }
+    },
+    items: [
+      {
+        value: "seventy-five",
+        text: "75% or more of profits",
+        checked: checked('how-much-profits','seventy-five')
+      },
+      {
+        value: "fifty",
+        text: "More than 50%, but not more than 75% of profits",
+        checked: checked('how-much-profits','fifty')
+      },
+      {
+        value: "twenty-five",
+        text: "More than 25%, but not more than 50% of profits",
+        checked: checked('how-much-profits','twenty-five')
+      },
+      {
+        value: "none",
+        text: "None of the above",
+        checked: checked('how-much-profits','none')
+      }
+    ]
+  }) }}
+        {{ govukButton({
+          text: "Save and continue"
+          }) }}
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

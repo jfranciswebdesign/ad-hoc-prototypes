@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Is {name} a person with significant control?
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/" method="get" class="form">
+
+        <h1 class="govuk-heading-l">
+          Is {name} a person with significant control?</h1>
+
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What is a PSC?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p>A person with significant control (PSC) is an individual that has:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>a right to share more than 25% of the company’s profits</li>
+              <li>
+                more than 25% of the company's voting rights
+              </li>
+              <li>
+                the right to appoint or remove directors</li>
+              <li>the right to make decisions or influence decisions that affect the company</li>
+            </ul>
+          </div>
+        </details>
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "is-a-psc",
+          name: "is-a-psc",
+          fieldset: {
+            legend: {
+              text: "Is {name} a person with significant control?",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              checked: checked('is-a-psc','yes')
+            },
+            {
+              value: "no",
+              text: "No",
+              checked: checked('is-a-psc','no')
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+          }) }}
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

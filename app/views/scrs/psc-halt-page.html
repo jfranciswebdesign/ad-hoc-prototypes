@@ -7,13 +7,37 @@
   }) }}
 {% endblock %}
 {% block pageTitle %}
-  Ad-hoc prototype work
+  You're about to set up the ‘Persons with Significant Control’ over the company
 {% endblock %}
 
 {% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds"></div>
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/" method="get" class="form">
+
+        <h1 class="govuk-heading-l">
+          You're about to set up the ‘Persons with Significant Control’ over the company</h1>
+        <p>A person with significant control (PSC) is an individual or company that has:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>the right to share more than 25% of the company's profits</li>
+          <li>more than 25% of the company’s voting rights</li>
+          <li>the right to appoint or remove directors</li>
+          <li>the right to make decisions or influence decisions that affect the company</li>
+        </ul>
+        <p>If none of the guarantors in the company have a right to share more than 25% of its profits or own more than 25% of the voting rights, the company may not have a PSC. You still need to complete the section to confirm this.</p>
+        {{ govukButton({
+        text: "Continue"
+      }) }}
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
   </div>
 
 {% endblock %}
