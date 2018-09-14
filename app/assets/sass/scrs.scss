@@ -4,3 +4,7 @@ a.scrs-help-link:link,
 a.scrs-help-link:visited {
   color: $govuk-secondary-text-colour;
 }
+
+.all-caps {
+  text-transform: uppercase !important; // Ensuring company names are all uppercase to match CHS!
+}

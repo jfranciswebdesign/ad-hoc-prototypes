@@ -8,7 +8,7 @@
 {% endblock %}
 {% block pageTitle %}
   Check and confirm details of the persons in control of
-  {{ data['company-name-for-testing'] }}
+  <span class="all-caps">{{ data['company-name-for-testing'] }}</span>
 {% endblock %}
 
 {% block content %}
@@ -23,7 +23,7 @@
 
         <h1 class="govuk-heading-l">
           Check and confirm details of the persons in control of
-          {{ data['company-name-for-testing'] }}
+          <span class="all-caps">{{ data['company-name-for-testing'] }}</span>
         </h1>
 
         {{ govukInsetText({
@@ -219,7 +219,7 @@
                 <input class="govuk-checkboxes__input" id="waste-1" name="confirm" type="checkbox" value="confirm">
                 <label class="govuk-label govuk-checkboxes__label" for="confirm">
                   I confirm that the persons named here are in control of
-                  {{ data['company-name-for-testing'] }}. They understand that their information will be listed in the public record.
+                  <span class="all-caps">{{ data['company-name-for-testing'] }}</span>. They understand that their information will be listed in the public record.
                 </label>
               </div>
             </div>
