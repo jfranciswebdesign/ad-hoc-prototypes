@@ -146,14 +146,33 @@
 
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
+              Is
+              {{ data['person-name-for-testing'] }}
+              a person with significant control?
+            </dt>
+            <dd class="app-check-your-answers__answer">{{ data['is-a-psc'] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="/scrs/is-a-psc">
+                Change<span class="govuk-visually-hidden">
+                  Is
+                  {{ data['person-name-for-testing'] }}
+                  a person with significant control?
+                </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
               Will
               {{ data['person-name-for-testing'] }}
               be distributed a share of the company's profits?
             </dt>
-            <dd class="app-check-your-answers__answer">No
+            <dd class="app-check-your-answers__answer">{{ data['distributedShare'] }}
             </dd>
             <dd class="app-check-your-answers__change">
-              <a href="javascript:void(0)">
+              <a href="/scrs/distributed-a-share">
                 Change<span class="govuk-visually-hidden">
                   Will
                   {{ data['person-name-for-testing'] }}
@@ -165,14 +184,31 @@
 
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
+              How much of the company's profits will
+              {{ data['person-name-for-testing'] }}
+              receive?</dt>
+            <dd class="app-check-your-answers__answer">{{ data['how-much-profits'] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="/scrs/how-much-profit">
+                Change<span class="govuk-visually-hidden">
+                  How much of the company's profits will
+                  {{ data['person-name-for-testing'] }}
+                  receive?
+                </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
               What percentage of voting rights does
               {{ data['person-name-for-testing'] }}
               own?
             </dt>
-            <dd class="app-check-your-answers__answer">The person holds, directly or indirectly, more than 75% of the voting rights in the company.
-            </dd>
+            <dd class="app-check-your-answers__answer">{{ data['percentage-voting-rights'] }}</dd>
             <dd class="app-check-your-answers__change">
-              <a href="javascript:void(0)">
+              <a href="/scrs/percentage-voting-rights">
                 Change<span class="govuk-visually-hidden">
                   What percentage of voting rights does
                   {{ data['person-name-for-testing'] }}
@@ -188,10 +224,10 @@
               {{ data['person-name-for-testing'] }}
               have the right to appoint or remove directors?
             </dt>
-            <dd class="app-check-your-answers__answer">The person holds the right, directly or indirectly, to appoint or remove a majority of the board of directors of the company.
+            <dd class="app-check-your-answers__answer">{{ data['right-remove-appoint'] }}
             </dd>
             <dd class="app-check-your-answers__change">
-              <a href="javascript:void(0)">
+              <a href="/scrs/right-remove-appoint">
                 Change<span class="govuk-visually-hidden">
                   As an individual, does
                   {{ data['person-name-for-testing'] }}
