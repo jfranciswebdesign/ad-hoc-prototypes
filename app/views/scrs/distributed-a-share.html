@@ -19,7 +19,7 @@
   }) }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/scrs/is-a-psc" method="get" class="form">
+      <form action="/scrs/percentage-voting-rights" method="get" class="form">
 
         <h1 class="govuk-heading-l">Will
           {{ data['person-name-for-testing'] }}
@@ -29,8 +29,8 @@
 
         {{ govukRadios({
           classes: "govuk-radios--inline",
-          idPrefix: "distributed-share",
-          name: "distributed-share",
+          idPrefix: "distributedShare",
+          name: "distributedShare",
           fieldset: {
             legend: {
               text: "Will {guarantor's name} be distributed a share of the company's profit?",
@@ -42,12 +42,12 @@
             {
               value: "yes",
               text: "Yes",
-              checked: checked('distributed-share','yes')
+              checked: checked('distributedShare','yes')
             },
             {
               value: "no",
               text: "No",
-              checked: checked('distributed-share','no')
+              checked: checked('distributedShare','no')
             }
           ]
         }) }}
