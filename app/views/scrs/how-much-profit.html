@@ -19,7 +19,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/scrs/percentage-voting-rights" method="get" class="form">
+      <form action="/scrs/percentage-voting-rights" method="post" class="form">
 
         <div class="govuk-form-group">
 
@@ -36,28 +36,46 @@
             <div class="govuk-radios">
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-much-profits-1" name="how-much-profits" type="radio" value="seventy-five">
+                <input
+                  class="govuk-radios__input"
+                  id="how-much-profits-1"
+                  name="how-much-profits"
+                  type="radio"
+                  value="75% or more of profits (actual wording to be confirmed)"
+                  {{ checked("how-much-profits", "75% or more of profits (actual wording to be confirmed)") }}>
                 <label class="govuk-label govuk-radios__label" for="how-much-profits-1">
                   75% or more of profits
                 </label>
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-much-profits-2" name="how-much-profits" type="radio" value="fifty">
+                <input
+                  class="govuk-radios__input"
+                  id="how-much-profits-2"
+                  name="how-much-profits"
+                  type="radio"
+                  value="More than 50%, but not more than 75% of profits (actual wording to be confirmed)"
+                  {{ checked("how-much-profits", "More than 50%, but not more than 75% of profits (actual wording to be confirmed)") }}>
                 <label class="govuk-label govuk-radios__label" for="how-much-profits-2">
                   More than 50%, but not more than 75% of profits
                 </label>
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-much-profits-3" name="how-much-profits" type="radio" value="twenty-five">
+                <input
+                  class="govuk-radios__input"
+                  id="how-much-profits-3"
+                  name="how-much-profits"
+                  type="radio"
+                  value="More than 25%, but not more than 50% of profits(actual wording to be confirmed)"
+                  {{ checked("how-much-profits", "More than 25%, but not more than 50% of profits(actual wording to be confirmed)") }}>
                 <label class="govuk-label govuk-radios__label" for="how-much-profits-3">
                   More than 25%, but not more than 50% of profits
                 </label>
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="how-much-profits-4" name="how-much-profits" type="radio" value="none">
+                <input class="govuk-radios__input" id="how-much-profits-4" name="how-much-profits" type="radio" value="None of the above (actual wording to be confirmed)" {{ checked("how-much-profits", "None of the above (actual wording to be confirmed)") }}>
                 <label class="govuk-label govuk-radios__label" for="how-much-profits-4">
                   None of the above
                 </label>
