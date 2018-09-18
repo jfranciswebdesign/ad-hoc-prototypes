@@ -47,6 +47,7 @@
         <!-- * `app-check-your-answers--short` for short questions -->
         <!-- * `app-check-your-answers__questions-long` for long questions -->
         <!-- * none for single group of q&a -->
+
         <dl class="app-check-your-answers app-check-your-answers--short">
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
@@ -182,24 +183,27 @@
             </dd>
           </div>
 
-          <div class="app-check-your-answers__contents">
-            <dt class="app-check-your-answers__question">
-              How much of the company's profits will
-              {{ data['person-name-for-testing'] }}
-              receive?</dt>
-            <dd class="app-check-your-answers__answer">
-              {{ data['how-much-profits'] }}
-            </dd>
-            <dd class="app-check-your-answers__change">
-              <a href="/scrs/how-much-profit">
-                Change<span class="govuk-visually-hidden">
-                  How much of the company's profits will
-                  {{ data['person-name-for-testing'] }}
-                  receive?
-                </span>
-              </a>
-            </dd>
-          </div>
+          {% if data['distributedShare'] === 'Yes' %}
+
+            <div class="app-check-your-answers__contents">
+              <dt class="app-check-your-answers__question">
+                How much of the company's profits will
+                {{ data['person-name-for-testing'] }}
+                receive?</dt>
+              <dd class="app-check-your-answers__answer">
+                {{ data['how-much-profits'] }}
+              </dd>
+              <dd class="app-check-your-answers__change">
+                <a href="/scrs/how-much-profit">
+                  Change<span class="govuk-visually-hidden">
+                    How much of the company's profits will
+                    {{ data['person-name-for-testing'] }}
+                    receive?
+                  </span>
+                </a>
+              </dd>
+            </div>
+          {% endif %}
 
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
