@@ -13,4 +13,14 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	//SCRS -   Is {name} }a person with significant control?
+	router.get( '/scrs/distributed-a-share', function ( req, res ) {
+		var isapsc = req.query.isapsc;
+		if ( isapsc == "No" ) {
+			res.redirect( "/scrs/psc-in-control" );
+		} else {
+			res.render( 'scrs/distributed-a-share' );
+		}
+	} );
+
 }

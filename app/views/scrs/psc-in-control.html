@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Check and confirm details of the persons in control of
+  {{ data['company-name-for-testing'] }}
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="javascript:void(0)" method="get" class="form">
+
+        <h1 class="govuk-heading-l">
+          Check and confirm details of the persons in control of
+          {{ data['company-name-for-testing'] }}</h1>
+
+        <div class="govuk-inset-text">
+          <p>
+            You've told us that there is nobody in significant control of this company. This means that:
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>No single person has the right to share more than 25% of the company's profits</li>
+            <li>No single person has more than 25% of the company’s voting rights</li>
+            <li>Nobody has the the right to appoint or remove directors</li>
+            <li>Nobody has the right to make decisions or influence decisions that affect the company</li>
+          </ul>
+        </div>
+
+        <p>
+          <a href="/scrs/is-a-psc">There are persons in control of this company.</a>
+        </p>
+      </p>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="confirm">
+          <legend class="govuk-visually-hidden">
+            I confirm that nobody has significant control of
+            {{ data['company-name-for-testing'] }}.
+          </legend>
+
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-1" name="confirm" type="checkbox" value="confirm">
+              <label class="govuk-label govuk-checkboxes__label" for="confirm">
+                I confirm that nobody has significant control of
+                <span class="all-caps">{{ data['company-name-for-testing'] }}</span>.
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukDetails({
+              summaryText: "What legal statement will appear on this company application?",
+              text: "Text goes here."
+            }) }}
+      {{ govukButton({
+              text: "Save and continue"
+              }) }}
+    </form>
+    <p>
+      <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
