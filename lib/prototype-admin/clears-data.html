@@ -1,4 +1,3 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
@@ -9,7 +8,7 @@
   {{ govukBackLink({
       "text": "Back",
       "href": "javascript: window.history.go(-1)"
-    }) 
+    })
   }}
 {% endblock %}
 
@@ -25,12 +24,11 @@
         iconFallbackText: "Warning"
       }) }}
 
-
       {{ govukButton({
         text: "Clear the data",
-        href: "/prototype-admin/clear-data"
+        href: "/accounts-reminder/index"
       }) }}
     </div>
-</div>
+  </div>
 
 {% endblock %}
