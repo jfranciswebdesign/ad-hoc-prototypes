@@ -40,8 +40,8 @@
         {% endset -%}
 
         {{ govukRadios({
-          idPrefix: "how-contacted-conditional",
-          name: "how-contacted",
+          idPrefix: "email-for-reminder-conditional",
+          name: "email-for-reminder",
           fieldset: {
             legend: {
               text: "Which email address does {name} want to use to receive filing reminders?",
@@ -55,7 +55,7 @@
             text: "email@address.co.uk"
           } ,
             {
-              value: "email",
+              value: "different@address.co.uk",
               text: "A different email address",
               conditional: {
                 html: emailHtml
