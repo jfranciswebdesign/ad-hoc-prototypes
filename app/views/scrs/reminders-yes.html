@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Which email address does
+  {{ data['person-name-for-testing'] }}
+  want to use to receive filing reminders?
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/scrs/reminders-yes" method="get" class="form">
+
+        <h1 class="govuk-heading-l">
+          Which email address does
+          {{ data['person-name-for-testing'] }}
+          want to use to receive filing reminders?</h1>
+
+        {% set emailHtml %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contact-by-email",
+          type: "email",
+          classes: "govuk-!-width-two-thirds",
+          label: {
+            text: "Enter the email address"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "how-contacted-conditional",
+          name: "how-contacted",
+          fieldset: {
+            legend: {
+              text: "Which email address does {name} want to use to receive filing reminders?",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+          {
+            value: "email@address.co.uk",
+            text: "email@address.co.uk"
+          } ,
+            {
+              value: "email",
+              text: "A different email address",
+              conditional: {
+                html: emailHtml
+              }
+            }
+
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+          }) }}
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+
+      <p>
+        <a href="/scrs/reminders-yes-not-previously-supplied" style="font-size:12px; color:#dedede; float:right;">Email address previously supplied</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}
