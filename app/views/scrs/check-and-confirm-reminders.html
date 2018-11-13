@@ -1,0 +1,188 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Check and confirm director details
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="javascript:void(0)" method="get" class="form">
+
+        <h1 class="govuk-heading-l">Check and confirm director details
+        </h1>
+
+        <!-- only add a heading for a list if there is more than one list -->
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">
+          {{ data['person-name-for-testing'] }}
+        </h2>
+        <p>
+          <a href="javascript:void(0)" class="govuk-link">Remove director</a>
+        </p>
+
+        <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+        <!-- * `app-check-your-answers--short` for short questions -->
+        <!-- * `app-check-your-answers__questions-long` for long questions -->
+        <!-- * none for single group of q&a -->
+
+        <dl class="app-check-your-answers app-check-your-answers--short">
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Name
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              {{ data['person-name-for-testing'] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  name</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Date of birth
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              5 January 1978
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  date of birth</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Country the person lives in
+            </dt>
+            <dd class="app-check-your-answers__answer">
+              United Kingdom
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  Country the person lives in
+                </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Nationality
+            </dt>
+            <dd class="app-check-your-answers__answer">British
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  Nationality</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              What is the correspondence address for
+              {{ data['person-name-for-testing'] }}?
+            </dt>
+            <dd class="app-check-your-answers__answer">The correspondence address is the same as the company's registered office address
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  What is the correspondence address for
+                  {{ data['person-name-for-testing'] }}?
+                </span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              What is the home address for
+              {{ data['person-name-for-testing'] }}?
+            </dt>
+            <dd class="app-check-your-answers__answer">14 Crown Way<br/>
+              Cardiff<br/>
+              Wales<br/>
+              CF14 3UZ
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="javascript:void(0)">
+                Change<span class="govuk-visually-hidden">
+                  What is the home address for
+                  {{ data['person-name-for-testing'] }}?</span>
+              </a>
+            </dd>
+          </div>
+
+          <div class="app-check-your-answers__contents">
+            <dt class="app-check-your-answers__question">
+              Which email address does
+              {{ data['person-name-for-testing'] }}
+              want to use to receive filing reminders?
+            </dt>
+            <dd class="app-check-your-answers__answer">{{ data['different-email'] }}
+            </dd>
+            <dd class="app-check-your-answers__change">
+              <a href="/scrs/isapsc">
+                Change<span class="govuk-visually-hidden">
+                  Is
+                  {{ data['person-name-for-testing'] }}
+                  a person with significant control?
+                </span>
+              </a>
+            </dd>
+          </div>
+
+        </dl>
+
+        <p>
+          <a href="javascript:void(0)" class="govuk-link">Add a director or secretary</a>
+        </p>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="confirm">
+            <legend class="govuk-visually-hidden">I confirm that the person named here agrees to become a director of the company.</legend>
+
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste-1" name="confirm" type="checkbox" value="confirm">
+                <label class="govuk-label govuk-checkboxes__label" for="confirm">I confirm that the person named here agrees to become a director of the company.</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukDetails({
+            summaryText: "What legal statement will appear on this company application?",
+            text: "Text goes here."
+          }) }}
+        {{ govukButton({
+            text: "Save and continue"
+            }) }}
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

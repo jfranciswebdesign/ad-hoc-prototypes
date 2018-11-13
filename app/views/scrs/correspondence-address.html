@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  What is the correspondence address for
+  {{ data['person-name-for-testing'] }}?
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/scrs/home-address" method="get" class="form">
+
+        <h1 class="govuk-heading-l">
+          What is the correspondence address for
+          {{ data['person-name-for-testing'] }}?</h1>
+
+        {{ govukInsetText({
+          text: "This can be a commercial or home address but it will appear on the public record and be available online."
+        }) }}
+
+        <p>
+          We will use this address to send notifications to the director.
+        </p>
+
+        {{ govukRadios({
+          idPrefix: "correspondence-address",
+          name: "correspondence-address",
+          fieldset: {
+            legend: {
+              text: "What is the correspondence address for {name}?",
+              isPageHeading: false,
+              classes: "govuk-visually-hidden"
+            }
+          },
+          items: [
+            {
+              value: "existing-correspondence-address",
+              text: "14, Crown Way, Cardiff, United Kingdom, CF14 3UZ"
+            },
+            {
+              value: "different-correspondence-address",
+              text: "A different address"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+          }) }}
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Director's details
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/scrs/correspondence-address" method="get" class="form">
+
+        <h1 class="govuk-heading-l">
+          Director's details</h1>
+
+        {{ govukInsetText({
+          text: "Director's details will appear on the public record except for the full date of birth. "
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Title (optional)"
+          },
+          hint: {
+            text: "For example, Mr, Mrs, Miss, Ms, Dr."
+          },
+          classes: "govuk-input--width-20",
+          id: "directors-title",
+          name: "directors-title"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "First name"
+          },
+          hint: {
+            text: "Enter first name in full not just initials."
+          },
+          classes: "govuk-input--width-20",
+          id: "directors-first-name",
+          name: "directors-first-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Middle name(s)"
+          },
+          hint: {
+            text: "Enter middle name(s) in full not just initials."
+          },
+          classes: "govuk-input--width-20",
+          id: "directors-middle-name",
+          name: "directors-middle-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name"
+          },
+          classes: "govuk-input--width-20",
+          id: "directors-last-name",
+          name: "directors-last-name"
+        }) }}
+
+        {{ govukRadios({
+          classes: "govuk-radios--inline",
+          idPrefix: "changed-name",
+          name: "changed-name",
+          fieldset: {
+            legend: {
+              text: "Has the director used a different name for business purposes in the last 20 years?",
+              isPageHeading: false
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Enter the country the director lives in"
+          },
+          classes: "govuk-input--width-20",
+          id: "directors-country",
+          name: "directors-country"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Nationality"
+          },
+          classes: "govuk-input--width-20",
+          id: "directors-nationality",
+          name: "directors-nationality"
+        }) }}
+        <p style="margin:-20px 0 30px 0;">
+          <!--inline CSS - do not reproduce!-->
+          <a href="javascript:void(0)">Add another nationality</a>
+        </p>
+
+        {{ govukDateInput({
+            id: "dob",
+            namePrefix: "dob",
+            fieldset: {
+              legend: {
+                text: "Date of birth?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend"
+              }
+            },
+            hint: {
+              text: "The director must be at least 16 years of age. For example, 31 3 1980"
+            }
+          }) }}
+
+        {{ govukInput({
+            classes: "govuk-!-margin-bottom-0",
+            label: {
+              text: "Job title"
+            },
+            hint: {
+              text: "Enter what the person works as. For example, carpenter."
+            },
+            classes: "govuk-input--width-20",
+            id: "directors-job-title",
+            name: "directors-job-title"
+          }) }}
+
+        {{ govukButton({
+          text: "Save and continue"
+          }) }}
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

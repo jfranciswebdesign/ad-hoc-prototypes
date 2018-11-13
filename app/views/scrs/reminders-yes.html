@@ -20,7 +20,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/scrs/reminders-yes" method="get" class="form">
+      <form action="/scrs/check-and-confirm-reminders" method="get" class="form">
 
         <h1 class="govuk-heading-l">
           Which email address does
@@ -29,8 +29,8 @@
 
         {% set emailHtml %}
         {{ govukInput({
-          id: "contact-by-email",
-          name: "contact-by-email",
+          id: "different-email",
+          name: "different-email",
           type: "email",
           classes: "govuk-!-width-two-thirds",
           label: {
