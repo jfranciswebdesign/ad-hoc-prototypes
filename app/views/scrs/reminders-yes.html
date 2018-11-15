@@ -8,7 +8,9 @@
 {% endblock %}
 {% block pageTitle %}
   Which email address does
-  {{ data['person-name-for-testing'] }}
+  {{ data['directors-first-name'] }}
+  {{ data['directors-middle-names'] }}
+  {{ data['directors-last-name'] }}
   want to use to receive filing reminders?
 {% endblock %}
 
@@ -24,7 +26,9 @@
 
         <h1 class="govuk-heading-l">
           Which email address does
-          {{ data['person-name-for-testing'] }}
+          {{ data['directors-first-name'] }}
+          {{ data['directors-middle-names'] }}
+          {{ data['directors-last-name'] }}
           want to use to receive filing reminders?</h1>
 
         {% set emailHtml %}
@@ -74,7 +78,7 @@
       </p>
 
       <p>
-        <a href="/scrs/reminders-yes-not-previously-supplied" style="font-size:12px; color:#dedede; float:right;">Email address previously supplied</a>
+        <a href="/scrs/reminders-yes-not-previously-supplied" style="font-size:12px; color:#dedede; float:right;">Email address not previously supplied</a>
       </p>
     </div>
   </div>

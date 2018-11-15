@@ -8,7 +8,9 @@
 {% endblock %}
 {% block pageTitle %}
   What is the home address for
-  {{ data['person-name-for-testing'] }}?
+  {{ data['directors-first-name'] }}
+  {{ data['directors-middle-names'] }}
+  {{ data['directors-last-name'] }}?
 {% endblock %}
 
 {% block content %}
@@ -23,7 +25,9 @@
 
         <h1 class="govuk-heading-l">
           What is the home address for
-          {{ data['person-name-for-testing'] }}?</h1>
+          {{ data['directors-first-name'] }}
+          {{ data['directors-middle-names'] }}
+          {{ data['directors-last-name'] }}?</h1>
 
         <div class="govuk-inset-text">
           <p>Home address details won't appear on the public record.</p>

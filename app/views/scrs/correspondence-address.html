@@ -8,7 +8,9 @@
 {% endblock %}
 {% block pageTitle %}
   What is the correspondence address for
-  {{ data['person-name-for-testing'] }}?
+  {{ data['directors-first-name'] }}
+  {{ data['directors-middle-names'] }}
+  {{ data['directors-last-name'] }}?
 {% endblock %}
 
 {% block content %}
@@ -23,7 +25,9 @@
 
         <h1 class="govuk-heading-l">
           What is the correspondence address for
-          {{ data['person-name-for-testing'] }}?</h1>
+          {{ data['directors-first-name'] }}
+          {{ data['directors-middle-names'] }}
+          {{ data['directors-last-name'] }}?</h1>
 
         {{ govukInsetText({
           text: "This can be a commercial or home address but it will appear on the public record and be available online."
