@@ -19,9 +19,12 @@ Example usage:
 
 module.exports = {
 
-	// Insert values here
+	// SCRS
 
 	"company-name-for-testing": "A TEST COMPANY LIMITED",
-	"person-name-for-testing": "Joe Bloggs"
-
+	"person-name-for-testing": "Joe Bloggs",
+	"directors-first-name": "Joe",
+	"directors-last-name": "Bloggs",
+	"directors-nationality": "British",
+	"directors-job-title": "Salesperson",
 }
