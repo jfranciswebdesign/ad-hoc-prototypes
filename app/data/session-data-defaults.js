@@ -25,6 +25,7 @@ module.exports = {
 	"person-name-for-testing": "Joe Bloggs",
 	"directors-first-name": "Joe",
 	"directors-last-name": "Bloggs",
+	"directors-country": "United Kingdom",
 	"directors-nationality": "British",
-	"directors-job-title": "Salesperson",
+	"directors-job-title": "Salesperson"
 }
