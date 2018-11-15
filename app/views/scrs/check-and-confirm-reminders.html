@@ -42,7 +42,9 @@
               Name
             </dt>
             <dd class="app-check-your-answers__answer">
-              {{ data['person-name-for-testing'] }}
+              {{ data['directors-first-name'] }}
+              {{ data['directors-middle-names'] }}
+              {{ data['directors-last-name'] }}
             </dd>
             <dd class="app-check-your-answers__change">
               <a href="javascript:void(0)">
@@ -87,7 +89,7 @@
             <dt class="app-check-your-answers__question">
               Nationality
             </dt>
-            <dd class="app-check-your-answers__answer">British
+            <dd class="app-check-your-answers__answer">{{ data['directors-nationality'] }}
             </dd>
             <dd class="app-check-your-answers__change">
               <a href="javascript:void(0)">
@@ -101,7 +103,7 @@
             <dt class="app-check-your-answers__question">
               Job title
             </dt>
-            <dd class="app-check-your-answers__answer">Salesman
+            <dd class="app-check-your-answers__answer">{{ data['directors-job-title'] }}
             </dd>
             <dd class="app-check-your-answers__change">
               <a href="javascript:void(0)">
