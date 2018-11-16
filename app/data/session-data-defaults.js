@@ -28,5 +28,5 @@ module.exports = {
 	"directors-last-name": "Bloggs",
 	"directors-country": "United Kingdom",
 	"directors-nationality": "British",
-	"directors-job-title": "Salesperson"
+	"directors-job-title": "Salesperson",
 }

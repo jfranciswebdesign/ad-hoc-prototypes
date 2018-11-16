@@ -126,7 +126,9 @@
               <a href="javascript:void(0)">
                 Change<span class="govuk-visually-hidden">
                   What is the correspondence address for
-                  {{ data['person-name-for-testing'] }}?
+                  {{ data['directors-first-name'] }}
+                  {{ data['directors-middle-names'] }}
+                  {{ data['directors-last-name'] }}?
                 </span>
               </a>
             </dd>
@@ -135,7 +137,9 @@
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
               What is the home address for
-              {{ data['person-name-for-testing'] }}?
+              {{ data['directors-first-name'] }}
+              {{ data['directors-middle-names'] }}
+              {{ data['directors-last-name'] }}?
             </dt>
             <dd class="app-check-your-answers__answer">14 Crown Way<br/>
               Cardiff<br/>
@@ -146,7 +150,9 @@
               <a href="javascript:void(0)">
                 Change<span class="govuk-visually-hidden">
                   What is the home address for
-                  {{ data['person-name-for-testing'] }}?</span>
+                  {{ data['directors-first-name'] }}
+                  {{ data['directors-middle-names'] }}
+                  {{ data['directors-last-name'] }}?</span>
               </a>
             </dd>
           </div>
@@ -154,7 +160,9 @@
           <div class="app-check-your-answers__contents">
             <dt class="app-check-your-answers__question">
               Which email address does
-              {{ data['person-name-for-testing'] }}
+              {{ data['directors-first-name'] }}
+              {{ data['directors-middle-names'] }}
+              {{ data['directors-last-name'] }}
               want to use to receive filing reminders?
             </dt>
             <dd class="app-check-your-answers__answer">{{ data['email-for-reminder'] }}
@@ -162,9 +170,11 @@
             <dd class="app-check-your-answers__change">
               <a href="/scrs/reminders-yes">
                 Change<span class="govuk-visually-hidden">
-                  Is
-                  {{ data['person-name-for-testing'] }}
-                  a person with significant control?
+                  Which email address does
+                  {{ data['directors-first-name'] }}
+                  {{ data['directors-middle-names'] }}
+                  {{ data['directors-last-name'] }}
+                  want to use to receive filing reminders?
                 </span>
               </a>
             </dd>
