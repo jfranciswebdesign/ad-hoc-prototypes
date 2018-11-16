@@ -23,4 +23,14 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	//SCRS -   Does {name}} want to receive filing reminders by email?
+	router.get( '/scrs/reminders-yes', function ( req, res ) {
+		var reminders = req.query.reminders;
+		if ( reminders == "No" ) {
+			res.redirect( "/scrs/check-and-confirm-reminders" );
+		} else {
+			res.render( 'scrs/reminders-yes' );
+		}
+	} );
+
 }
