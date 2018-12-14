@@ -9,4 +9,3 @@ public
 node_modules/*
 .tmuxp.*
 package-lock.json
-app/config.js

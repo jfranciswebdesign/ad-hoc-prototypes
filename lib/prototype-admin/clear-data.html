@@ -1,37 +1,36 @@
+
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Clear data
+  Clear data? - GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+      "text": "Back",
+      "href": "javascript: window.history.go(-1)"
+    }) 
+  }}
 {% endblock %}
 
 {% block content %}
 
-  <h1 class="govuk-heading-m">
-    Data cleared
-  </h1>
+<form method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Clear data?
+      </h1>
+      {{ govukWarningText({
+        text: "This will clear all of the data entered in this session",
+        iconFallbackText: "Warning"
+      }) }}
 
-  <p>
-    The session data has been cleared.
-  </p>
-  <p class="govuk-heading-s">
-    Go back to:
-  </p>
-  <ul class=" govuk-list" ="govuk-list">
-    <li>
-      <a href="/financial-sanctions-checker/index">
-        Financial sanctions checker
-      </a>
-    </li>
-    <li>
-      <a href="/scrs/index">
-        Streamlined company registration service
-      </a>
-    </li>
-    <li>
-      <a href="/accounts-reminder/index">
-        Accounts eReminder
-      </a>
-    </li>
-  </ul>
+      {{ govukButton({
+        text: "Clear the data"
+      }) }}
+    </div>
+  </div>
+</form>
 
 {% endblock %}
