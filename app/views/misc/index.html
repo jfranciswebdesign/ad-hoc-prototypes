@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/misc/index",
+    serviceName: "Miscellaneous",
+    serviceUrl: "/misc/index"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Miscellaneous
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    <!--{% include "includes/phase_banner_beta.html" %}-->
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl">
+            Miscellaneous</h1>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/misc/webfiling-problem-payment-email">Email - Webfiling payment problem</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
