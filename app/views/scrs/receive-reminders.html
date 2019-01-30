@@ -30,6 +30,11 @@
           {{ data['directors-middle-names'] }}
           {{ data['directors-last-name'] }}
           want to receive filing reminders by email?</h1>
+        <p>Opting to receive filing reminders by email will mean that we no longer send them to
+          {{ data['directors-first-name'] }}
+          {{ data['directors-middle-names'] }}
+          {{ data['directors-last-name'] }}
+          by post</p>
 
         <details class="govuk-details">
           <summary class="govuk-details__summary">
@@ -39,7 +44,6 @@
           </summary>
           <div class="govuk-details__text">
             <p>We will remind you when your company’s confirmation statement and accounts are due for filing.</p>
-            <p>Reminders will be sent to the company by post, unless you sign up to receive them by email instead.</p>
           </div>
         </details>
         {{ govukRadios({
