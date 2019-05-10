@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Find the address where the company will carry out most of its business activities
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/" method="get" class="form">
+
+        <h1 class="govuk-heading-l">Find the address where the company will carry out most of its business activities</h1>
+
+        {{ govukInput({
+          label: {
+            text: "UK postcode"
+          },
+          id: "uk-postcode",
+          name: "uk-postcode",
+          classes: "govuk-!-width-one-quarter"
+        }) }}
+
+        <p>
+          <a href="javascript:void(0)" class="govuk-link">Enter address manually</a>
+        </p>
+
+        {{ govukInput({
+          label: {
+            text: "Property name or number"
+          },
+          hint: {
+             text: "For example, The Mill, 116 or Flat 37a"
+           },
+          id: "property-name-number",
+          name: "property-name-number",
+          classes: "govuk-!-width-one-third"
+        }) }}
+
+        {{ govukButton({
+            text: "Find address"
+          }) }}
+
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

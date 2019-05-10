@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Choose an address
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/" method="get" class="form">
+
+        {{ govukRadios({
+          idPrefix: "where-do-you-live",
+          name: "where-do-you-live",
+          fieldset: {
+            legend: {
+              text: "Choose an address",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+            {
+              value: "crown-way-1",
+              text: "Crown Way, Cardiff, South Glamorgan, CF14 3UZ"
+            },
+            {
+              value: "crown-way-2",
+              text: "Orange (sgl0216) Outside Companies, Crown Way, Cathays, Cardiff, South Glamorgan, CF14 3UZ"
+            },
+            {
+              value: "crown-way-3",
+              text: "Paer First Floor Repository Stores, Crown Way, Cathays, Cardiff, South Glamorgan, CF14 3UZ"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+            text: "Continue"
+          }) }}
+
+        <p>
+          <a href="javascript:void(0)" class="govuk-link">The address is not on the list</a>
+        </p>
+
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

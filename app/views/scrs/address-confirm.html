@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Confirm where the company will carry out mosy of its business activities
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/" method="get" class="form">
+        <h1 class="govuk-heading-l">Confirm where the company will carry out most of its business activities</h1>
+        <p>Crown Way<br>
+          Cardiff<br/>
+          CF14 3UZ<br/>
+          United Kingdom</p>
+
+        <p>
+          <a href="javascript:void(0)" class="govuk-link">Change
+            <span class="govuk-visually-hidden">where the company will carry out most of its business activities</span></a>
+        </p>
+
+        {{ govukButton({
+            text: "Confirm and continue"
+          }) }}
+
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

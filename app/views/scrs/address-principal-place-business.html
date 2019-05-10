@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/scrs/index",
+    serviceName: "Set up a limited company and register for Corporation Tax",
+    serviceUrl: "/scrs/index"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  What is the company's 'principal place of business'?
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/" method="get" class="form">
+
+        <h1 class="govuk-heading-l">What is the company's 'principal place of business'?</h1>
+        <p>This is where the company will carry out most of its business activities.</p>
+        <p>if this will be in different locations, use the address where the company will keep its financial or business records.</p>
+
+        {{ govukInsetText({
+          text: "This address will not go on the public record."
+        }) }}
+        {{ govukDetails({
+          summaryText: "The company doesn't have a principal place of business yet",
+          text: "Text goes here."
+        }) }}
+
+        {% set addresslHtml %}
+        {{ govukInput({
+          label: {
+            text: "Property name or number"
+          },
+          hint: {
+             text: "For example, The Mill, 116 or Flat 37a"
+           },
+          id: "property-name-number",
+          name: "property-name-number",
+          classes: "govuk-!-width-one-third"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "UK postcode"
+          },
+          id: "uk-postcode",
+          name: "uk-postcode",
+          classes: "govuk-!-width-one-quarter"
+        }) }}
+        <br/>
+        {{ govukButton({
+            text: "Find address",
+            classes: "secondary-button"
+          }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+            idPrefix: "address-principal-place-business-conditional",
+            name: "address-principal-place-business",
+            fieldset: {
+              legend: {
+                text: "What is the company's 'principal place of business'?",
+                isPageHeading: true,
+                classes: "govuk-visually-hidden"
+              }
+            },
+            items: [
+              {
+                value: "wentloog-1",
+                text: "84 Wentloog Road, Rumney, Cardiff, CF3 3EA, WALES"
+              },
+              {
+                value: "other",
+                text: "Something"
+              },
+              {
+                value: "different",
+                text: "A different address",
+                conditional: {
+                  html: addresslHtml
+                }
+              }
+            ]
+          }) }}
+
+        {{ govukButton({
+            text: "Save and continue"
+          }) }}
+
+      </form>
+      <p>
+        <a href="javascript:void(0)" class="govuk-link govuk-body-s scrs-help-link">Get help with this page</a>
+      </p>
+    </div>
+  </div>
+
+{% endblock %}
