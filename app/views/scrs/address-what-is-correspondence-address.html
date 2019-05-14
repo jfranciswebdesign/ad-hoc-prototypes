@@ -7,48 +7,41 @@
   }) }}
 {% endblock %}
 {% block pageTitle %}
-  What is the company's 'principal place of business'?
+  What is the correspondence address for {Name}?
 {% endblock %}
 
 {% block content %}
   {{ govukBackLink({
-    text: "Back",
-    href: "javascript:history.back()"
-  }) }}
-
+  text: "Back",
+  href: "javascript:history.back()"
+}) }}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <form action="/scrs/address-confirm" method="get" class="form">
+      <form action="/scrs/address-find-principal-place-business" method="get" class="form">
 
-        <h1 class="govuk-heading-l">What is the company's 'principal place of business'?</h1>
-        <p>This is where the company will carry out most of its business activities.</p>
-        <p>if this will be in different locations, use the address where the company will keep its financial or business records.</p>
+        <h1 class="govuk-heading-l">What is the correspondence address for {Name}?</h1>
 
         {{ govukInsetText({
-          text: "This address will not go on the public record."
-        }) }}
-        {{ govukDetails({
-          summaryText: "The company doesn't have a principal place of business yet",
-          text: "Text goes here."
+          text: "This can be a commercial or home address but it will appear on the public record and be available online."
         }) }}
 
         {{ govukRadios({
-            idPrefix: "addressPrincipalPlaceBusiness",
-            name: "addressPrincipalPlaceBusiness",
+            idPrefix: "correspondenceAddress",
+            name: "correspondenceAddress",
             fieldset: {
               legend: {
-                text: "What is the company's 'principal place of business'?",
+                text: "What is the correspondence address for {Name}?",
                 isPageHeading: true,
                 classes: "govuk-visually-hidden"
               }
             },
             items: [
               {
-                value: "wentloog-1",
+                value: "wentloog",
                 text: "84 Wentloog Road, Rumney, Cardiff, CF3 3EA, Wales"
               },
               {
-                value: "other",
+                value: "crown",
                 text: "1 Crown Way, Maindy, Cardiff CF14 3UZ"
               },
               {
@@ -59,7 +52,7 @@
           }) }}
 
         {{ govukButton({
-            text: "Save and continue"
+            text: "Find address"
           }) }}
 
       </form>

@@ -7,7 +7,7 @@
   }) }}
 {% endblock %}
 {% block pageTitle %}
-  Find the address where the company will carry out most of its business activities
+  What is the company's registered office address?
 {% endblock %}
 
 {% block content %}
@@ -19,7 +19,11 @@
     <div class="govuk-grid-column-two-thirds">
       <form action="/scrs/address-choose" method="get" class="form">
 
-        <h1 class="govuk-heading-l">Find the address where the company will carry out most of its business activities</h1>
+        <h1 class="govuk-heading-l">What is the company's registered office address?</h1>
+
+        {{ govukInsetText({
+          text: "This can be a commercial or home address but it will appear on the public record and be available online."
+        }) }}
 
         {{ govukInput({
           label: {

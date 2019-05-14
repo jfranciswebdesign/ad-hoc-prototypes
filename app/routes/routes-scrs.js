@@ -33,4 +33,26 @@ module.exports = function ( router ) {
 		}
 	} );
 
+	//SCRS -   What is the company's 'principal place of business'?
+	router.get( '/scrs/address-confirm', function ( req, res ) {
+		var addressPrincipalPlaceBusiness = req.query.addressPrincipalPlaceBusiness;
+		if ( addressPrincipalPlaceBusiness == "different" ) {
+			res.redirect( "/scrs/address-find-principal-place-business" );
+		} else {
+			res.render( 'scrs/address-confirm' );
+		}
+	} );
+
+	//SCRS -   What is the company's 'principal place of business'?
+	router.get( '/scrs/address-find-principal-place-business', function ( req, res ) {
+		var correspondenceAddress = req.query.correspondenceAddress;
+		if ( correspondenceAddress == "wentloog" ) {
+			res.redirect( "/scrs/address-confirm" );
+		} else if ( correspondenceAddress == "crown" ) {
+			res.redirect( "/scrs/address-confirm" );
+		} else {
+			res.render( 'scrs/address-find-principal-place-business' );
+		}
+	} );
+
 }
