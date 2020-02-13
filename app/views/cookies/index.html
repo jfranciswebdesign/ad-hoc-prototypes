@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/cookies/index",
+    serviceName: "Cookie consent",
+    serviceUrl: "/cookies/index"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Cookie consent
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    <!--{% include "includes/phase_banner_beta.html" %}-->
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <h1 class="govuk-heading-xl">
+            Cookie consent</h1>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/cookies/webfiling-login-page">Webfiling</a>
+            </li>
+            <li>
+              <a href="/cookies/chs">CHS</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}
