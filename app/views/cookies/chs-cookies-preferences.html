@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cookies on SERVICE NAME
+{% endblock %}
+
+{% block content %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="/scrs/address-confirm" method="get" class="form">
+
+        <h1 class="govuk-heading-xl">Cookies on Companies House SERVICE NAME</h1>
+        <p class="">Cookies are files saved on your phone, tablet or computer when you visit a website</p>
+        <p class="">We use cookies to store information about how you use the Companies House SERVICE NAME, such as the pages you visit.</p>
+        <h2 class="govuk-heading-l">Cookie settings
+        </h2>
+        <p class="">We use X types of cookie. You can choose which cookies you're happy for us to use.</p>
+
+        <h2 class="govuk-heading-l">Cookie 1
+        </h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit.</p>
+
+        {{ govukRadios({
+            classes: "govuk-radios--inline",
+            idPrefix: "cookie1",
+            name: "cookie1",
+            fieldset: {
+              legend: {
+                text: "Cookies on SERVICE NAME 1",
+                isPageHeading: false,
+                classes: "govuk-visually-hidden"
+              }
+            },
+            items: [
+              {
+                value: "Yes",
+                text: "Yes"
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+            ]
+          }) }}
+
+        <h2 class="govuk-heading-l">Cookie 2
+        </h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit.</p>
+
+        {{ govukRadios({
+              classes: "govuk-radios--inline",
+              idPrefix: "cookie2",
+              name: "cookie2",
+              fieldset: {
+                legend: {
+                  text: "Cookies on SERVICE NAME 2",
+                  isPageHeading: false,
+                  classes: "govuk-visually-hidden"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes"
+                },
+                {
+                  value: "No",
+                  text: "No"
+                }
+              ]
+            }) }}
+
+        <h2 class="govuk-heading-l">Cookie 3
+        </h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+          irure dolor in reprehenderit.</p>
+
+        {{ govukRadios({
+                classes: "govuk-radios--inline",
+                idPrefix: "cookie3",
+                name: "cookie3",
+                fieldset: {
+                  legend: {
+                    text: "Cookies on SERVICE NAME 3",
+                    isPageHeading: false,
+                    classes: "govuk-visually-hidden"
+                  }
+                },
+                items: [
+                  {
+                    value: "Yes",
+                    text: "Yes"
+                  },
+                  {
+                    value: "No",
+                    text: "No"
+                  }
+                ]
+              }) }}
+
+        <h2 class="govuk-heading-l">Strictly necessary cookies</h2>
+        <p>These essential cookies do things like remember your progress through a form (for example FORM NAME).</p>
+        <p>They always need to be on.</p>
+        <p>
+          <a href="">Find out more about cookies on Companies House
+          </a>
+        </p>
+        {{ govukButton({
+          text: "Save changes"
+          }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
