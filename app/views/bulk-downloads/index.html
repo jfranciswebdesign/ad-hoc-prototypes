@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/bulk-downloads/index",
+    serviceName: "Bulk downloads",
+    serviceUrl: "/bulk-downloads/index"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Bulk downloads
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <h1 class="govuk-heading-xl">
+            Bulk downloads</h1>
+
+          <ul class="govuk-list govuk-list--bullet">
+            <li>
+              <a href="/bulk-downloads/example-download-page">Example download page</a>
+            </li>
+            <li>
+              <a href="/bulk-downloads/example-guidance-page">Example guidance page</a>
+            </li>
+            <li>
+              <a href="/bulk-downloads/accessibility-statement">Accessibility statememt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <!---govuk-width-container-->
+
+{% endblock %}

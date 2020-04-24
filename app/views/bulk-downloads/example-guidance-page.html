@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/bulk-downloads/index",
+    serviceName: "Bulk downloads",
+    serviceUrl: "/bulk-downloads/index"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Example FAQ
+{% endblock %}
+{% block main %}
+
+  <div class="govuk-width-container">
+    {% include "includes/phase_banner_beta.html" %}
+
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+          <h1 class="govuk-heading-xl">
+            Example FAQ</h1>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <h2 class="govuk-heading-l">H2 heading</h2>
+              <p class="govuk-body">This is a paragraph inside a two-thirds wide column</p>
+              <h3 class="govuk-heading-m">H3 heading</h3>
+              <p class="govuk-body">Lorem ipsum dolor sit amet,
+                <a href="javascript:void(0)">consectetur adipiscing elit</a>. Ut ullamcorper interdum ultrices. Donec in luctus quam. Fusce at dictum quam, eget ornare arcu. Donec eu hendrerit nisi. Suspendisse tincidunt volutpat justo, non convallis elit molestie
+                a. Nullam arcu diam, pulvinar vel odio nec, mollis iaculis magna. Proin in risus sodales, commodo ante semper, ultricies orci.
+              </p>
+              {{ govukInsetText({
+                text: "Each data file is provided free of charge and is not supported. Due to its size, each file can take several minutes to download."
+              }) }}
+              <h3 class="govuk-heading-m">H3 heading</h3>
+              <p class="govuk-body">Lorem ipsum dolor sit amet,
+                <a href="javascript:void(0)">consectetur adipiscing elit</a>. Ut ullamcorper interdum ultrices. Donec in luctus quam. Fusce at dictum quam, eget ornare arcu. Donec eu hendrerit nisi. Suspendisse tincidunt volutpat justo, non convallis elit molestie
+                a. Nullam arcu diam, pulvinar vel odio nec, mollis iaculis magna. Proin in risus sodales, commodo ante semper, ultricies orci.
+              </p>
+              <h3 class="govuk-heading-m">H3 heading</h3>
+              <p class="govuk-body">Lorem ipsum dolor sit amet,
+                <a href="javascript:void(0)">consectetur adipiscing elit</a>. Ut ullamcorper interdum ultrices. Donec in luctus quam. Fusce at dictum quam, eget ornare arcu. Donec eu hendrerit nisi. Suspendisse tincidunt volutpat justo, non convallis elit molestie
+                a. Nullam arcu diam, pulvinar vel odio nec, mollis iaculis magna. Proin in risus sodales, commodo ante semper, ultricies orci.
+              </p>
+              <h3 class="govuk-heading-m">H3 heading</h3>
+              <p class="govuk-body">Lorem ipsum dolor sit amet,
+                <a href="javascript:void(0)">consectetur adipiscing elit</a>. Ut ullamcorper interdum ultrices. Donec in luctus quam. Fusce at dictum quam, eget ornare arcu. Donec eu hendrerit nisi. Suspendisse tincidunt volutpat justo, non convallis elit molestie
+                a. Nullam arcu diam, pulvinar vel odio nec, mollis iaculis magna. Proin in risus sodales, commodo ante semper, ultricies orci.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </main>
+    </div>
+    <!---govuk-width-container-->
+
+  {% endblock %}
