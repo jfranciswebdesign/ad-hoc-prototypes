@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+{% block header %}
+  {{ govukHeader({
+    serviceName: "Accounts upload service"
+  }) }}
+{% endblock %}
+{% block pageTitle %}
+  Manage account
+{% endblock %}
+
+{% block content %}
+  <ul id="navigation" class="mobile-hidden">
+    <li class="user" id="signed-in-user">user@companieshouse.gov.uk
+    </li>
+    <li>
+      <a href="/account/login" id="user-signout">Sign out</a>
+    </li>
+  </ul>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-width">
+      <form action="/scrs/address-confirm" method="get" class="form">
+
+        <h1 class="govuk-heading-l">Manage account</h1>
+
+        {{ govukRadios({
+          idPrefix: "choose-company",
+          name: "choose-company",
+          classes: "govuk-!-padding-bottom-4",
+          fieldset: {
+            legend: {
+              text: "Choose company",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "test1",
+              text: "Test Company Limited"
+            },
+            {
+              value: "test2",
+              text: "Another Example Company Ltd"
+            }
+          ]
+        }) }}
+
+        <table class="govuk-table \">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">
+                Filing type
+              </th>
+              <th class="govuk-table__header" scope="col">
+                Current file
+              </th>
+              <th class="govuk-table__header" scope="col">
+                Upload/Remove
+              </th>
+              <th class="govuk-table__header" scope="col">
+                Validation
+              </th>
+              <th class="govuk-table__header" scope="col">
+                Download&nbsp;template
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                Parent accounts
+              </td>
+              <td class="govuk-table__cell">
+                <a href="">Example-DSEP.zip</a>
+              </td>
+              <td class="govuk-table__cell">
+                <button class="govuk-button govuk-button--secondary" style="top:15px;" data-module="govuk-button">
+                  Remove
+                </button>
+              </td>
+
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  Valid
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="">Download (256KB)</a>
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                Statement of guarantee
+              </td>
+              <td class="govuk-table__cell">
+                <a href="">guarantee2020.xlsm</a>
+              </td>
+              <td class="govuk-table__cell">
+                <button class="govuk-button govuk-button--secondary" style="top:15px;" data-module="govuk-button">
+                  Remove
+                </button>
+              </td>
+
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--red" style="color: #942514;
+background: #f6d7d2;">
+                  Invalid
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="">Download (870KB)</a>
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                Give notice of statement of guarantee by subsidiary company (AA06)
+              </td>
+
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <button class="govuk-button" style="top:15px;" data-module="govuk-button">
+                  Upload
+                </button>
+              </td>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell">
+                <a href="">Download (112KB)</a>
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                Company accounts
+              </td>
+
+              <td class="govuk-table__cell">
+                <a href="">CompanyAccounts2020.xlsm</a>
+              </td>
+              <td class="govuk-table__cell">
+                <button class="govuk-button govuk-button--secondary" style="top:15px;" data-module="govuk-button">
+                  Remove
+                </button>
+              </td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--green">
+                  Valid
+                </strong>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="">Download (88KB)</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        <h2 class="govuk-heading-m govuk-!-padding-top-4">Consolidated accounts</h2>
+
+        {{ govukButton({
+  text: "Create consolidated accounts"
+}) }}
+      </div>
+    </div>
+
+  {% endblock %}
