@@ -4706,3 +4706,30 @@ a.video-demo:after {
 .cookie-consent input {
   margin: 6px 7px 6px 0;
 }
+
+.skipnav {
+  text-align: left;
+  background-color: #ffdd00;
+}
+
+.skipnav a {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  color: #000;
+  text-decoration: underline;
+  padding: 0.5em;
+  display: block;
+}
+
+.skipnav a:active,
+.skipnav a:focus {
+  position: static;
+  left: 0;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  background-color: #ffdd00;
+}
